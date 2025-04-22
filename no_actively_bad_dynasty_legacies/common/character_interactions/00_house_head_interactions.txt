@@ -20,16 +20,7 @@ call_house_member_to_war_interaction = {
 		NOT = { scope:recipient = scope:actor }
 
 		scope:actor = {
-			OR = {
-				is_house_head = yes
-				AND = {
-					exists = dynasty
-					# DLC checking
-					has_fp2_dlc_trigger = yes
-					# Standard check
-					dynasty = { has_dynasty_perk = fp2_coterie_legacy_3 }
-				}
-			}
+			is_house_head = yes
 			religion = scope:recipient.religion
 			house = scope:recipient.house
 			any_character_war = {

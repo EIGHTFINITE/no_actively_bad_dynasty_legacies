@@ -33,14 +33,12 @@ fp3_khvarenah_legacy_2 = { # Lofty Ambitions
 
 	can_be_picked = { eligible_for_fp3_khvarenah_legacy_trigger = yes }
 
-	effect = {
-		custom_description_no_bullet = { text = fp3_khvarenah_legacy_2_hostile_effect }
-	}
-
 	character_modifier = {
 		personal_scheme_phase_duration_add = medium_scheme_phase_duration_bonus_value
 		owned_personal_scheme_success_chance_add = 15
 		monthly_stewardship_lifestyle_xp_gain_mult = 0.15
+		enemy_hostile_scheme_success_chance_add = -10
+		owned_hostile_scheme_success_chance_add = 10
 	}
 
 	ai_chance = {

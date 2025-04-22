@@ -44,6 +44,7 @@ ep3_administrative_legacy_2 = { # Power is a Ladder
 	}
 
 	character_modifier = {
+		enemy_political_scheme_success_chance_add = -10
 		owned_political_scheme_success_chance_add = 10
 	}
 }

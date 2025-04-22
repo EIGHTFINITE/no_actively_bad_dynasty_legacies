@@ -2778,21 +2778,6 @@ hostile_scheme_base_odds_prediction_guts_value = {
 		}
 	}
 
-	if = { # FP3 legacy track bonus for murdering dynasty members
-		limit = {
-			scope:temp_target = {
-				exists = dynasty
-				exists = scope:owner.dynasty
-				dynasty = scope:owner.dynasty
-				dynasty = { has_dynasty_perk = fp3_khvarenah_legacy_2 }
-			}
-		}
-		add = {
-			value = 10
-			desc = scheme_odds.owner.dynasty_legacy_kinslaying_bonus_from_fp3_khvarenah_legacy_2
-		}
-	}
-	
 	if = { # Essentially the Base
 		limit = {
 			scope:owner = {
