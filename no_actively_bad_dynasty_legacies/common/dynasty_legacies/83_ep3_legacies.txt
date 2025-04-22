@@ -2,6 +2,7 @@
 	is_shown = {
 		has_dlc_feature = roads_to_power
 		OR = {
+			is_ai = no
 			government_allows = administrative
 			dynasty = {
 				has_dynasty_perk = ep3_administrative_legacy_1
