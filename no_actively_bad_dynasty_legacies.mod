@@ -6,5 +6,5 @@ tags={
 	"Balance"
 }
 name="No Actively Bad Dynasty Legacies"
-supported_version="1.15.*"
+supported_version="1.16.*"
 path="mod/no_actively_bad_dynasty_legacies"

@@ -6,4 +6,4 @@ tags={
 	"Balance"
 }
 name="No Actively Bad Dynasty Legacies"
-supported_version="1.15.*"
+supported_version="1.16.*"
