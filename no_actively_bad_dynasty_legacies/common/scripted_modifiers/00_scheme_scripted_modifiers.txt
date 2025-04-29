@@ -319,6 +319,52 @@ ai_agent_join_chance_basic_suite_modifier = {
 		desc = BASE_RELUCTANCE
 	}
 
+	# Nomad Yurt
+	modifier = {
+		add = {
+			value = 0
+			if = {
+				limit = {
+					scope:owner.domicile ?= {
+						has_domicile_parameter = realm_agent_acceptance_lvl_3
+					}
+				}
+				add = 30
+			}
+			else_if = {
+				limit = {
+					scope:owner.domicile ?= {
+						has_domicile_parameter = realm_agent_acceptance_lvl_3
+					}
+				}
+				add = 20
+			}
+			else_if = {
+				limit = {
+					scope:owner.domicile ?= {
+						has_domicile_parameter = realm_agent_acceptance_lvl_3
+					}
+				}
+				add = 20
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:owner = {
+					government_has_flag = government_is_nomadic
+				}
+			}
+			scope:owner.domicile ?= {
+				has_domicile_building_or_higher = agent_dread_yurt_01
+			}
+			OR = {
+				top_liege = scope:owner
+				host = scope:owner
+			}
+		}
+		desc = agent_dread_yurt_01_domicile_building
+	}
+
 	# Don't scheme easily against people in other realms.
 	modifier = {
 		add = -25
@@ -604,6 +650,27 @@ ai_agent_join_chance_basic_suite_modifier = {
 		scope:piety ?= yes
 		exists = scope:recipient
 		desc = SCHEME_WITH_PIETY
+	}
+	## Offer Herd
+	modifier = {
+		add = {
+			value = 20
+			scope:recipient = {
+				# A bit more for ambitious chars.
+				if = {
+					limit = { has_trait = ambitious }
+					add = 10
+				}
+				# A bit less for content ones.
+				if = {
+					limit = { has_trait = content }
+					add = -10
+				}
+			}
+		}
+		scope:herd ?= yes
+		exists = scope:recipient
+		desc = SCHEME_WITH_HERD
 	}
 	## Released them from prison in exchange for scheme support (ep3_emperor_yearly.2130)
 	modifier = {
@@ -1037,6 +1104,17 @@ ai_agent_join_chance_hostile_general_suite_modifier = {
 		scope:target = { has_focus = stewardship_duty_focus }
 		add = -10
 		desc = SCHEME_DUTY_FOCUS
+	}
+	# Dynasty Legacies
+	## FP3 legacy track bonus 
+	modifier = {
+		add = 10
+		scope:target = {
+			is_lowborn = no
+			dynasty = root.dynasty
+			dynasty = { has_dynasty_perk = fp3_khvarenah_legacy_2 }
+		}
+		desc = "KHVARENAH_LEGACY_DESC"
 	}
 	# Event Content
 	## Generic bonus modifier.
@@ -2303,6 +2381,17 @@ hostile_scheme_base_chance_modifier = {
 		desc = "SCHEME_TARGET_TRAVELLING_INCOGNITO"
 	}
 
+	modifier = { # FP3 legacy track bonus for murdering dynasty members
+		add = 10
+		scope:target = {
+			exists = dynasty
+			exists = scope:owner.dynasty
+			dynasty = scope:owner.dynasty
+			dynasty = { has_dynasty_perk = fp3_khvarenah_legacy_2 }
+		}
+		desc = "KHVARENAH_LEGACY_DESC"
+	}
+	
 	first_valid = { # Essentially the Base
 		modifier = {
 			add = 75
@@ -2546,6 +2635,17 @@ hostile_scheme_title_base_chance_modifier = {
 		desc = "SCHEME_PREPARED_FOR_ANYTHING_LIEGE_PERK_MODIFIER"
 	}
 
+	modifier = { # FP3 legacy track bonus for murdering dynasty members
+		add = 10
+		scope:target.holder ?= {
+			exists = dynasty
+			exists = scope:owner.dynasty
+			dynasty = scope:owner.dynasty
+			dynasty = { has_dynasty_perk = fp3_khvarenah_legacy_2 }
+		}
+		desc = "KHVARENAH_LEGACY_DESC"
+	}
+	
 	first_valid = { # Essentially the Base
 		modifier = {
 			add = 75
@@ -3025,6 +3125,17 @@ ai_agent_join_chance_hostile_title_modifier = {
 		scope:target.holder = { has_focus = stewardship_duty_focus }
 		add = -10
 		desc = SCHEME_DUTY_FOCUS
+	}
+	# Dynasty Legacies
+	## FP3 legacy track bonus 
+	modifier = {
+		add = 10
+		scope:target.holder = {
+			is_lowborn = no
+			dynasty = root.dynasty
+			dynasty = { has_dynasty_perk = fp3_khvarenah_legacy_2 }
+		}
+		desc = "KHVARENAH_LEGACY_DESC"
 	}
 	# Event Content
 	## Generic bonus modifier.
