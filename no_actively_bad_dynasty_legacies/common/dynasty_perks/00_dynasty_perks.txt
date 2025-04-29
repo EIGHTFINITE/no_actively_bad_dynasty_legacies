@@ -244,7 +244,6 @@ guile_legacy_2 = { # Long Reach
 
 	character_modifier = {
 		name = guile_legacy_2_name
-		enemy_hostile_scheme_success_chance_add = -10
 		owned_hostile_scheme_success_chance_add = 10
 	}
 }
@@ -254,7 +253,6 @@ guile_legacy_3 = { # Natural Schemers
 
 	character_modifier = {
 		monthly_intrigue_lifestyle_xp_gain_mult = 0.1
-		enemy_scheme_secrecy_add = -15
 		owned_scheme_secrecy_add = 15
 	}
 }
@@ -332,6 +330,7 @@ erudition_legacy_3 = { # Treasured Knowledge
 	character_modifier = {
 		monthly_learning_lifestyle_xp_gain_mult = 0.1
 		development_growth_factor = 0.2
+		county_fertility_decline_mult = -0.1
 	}
 }
 
