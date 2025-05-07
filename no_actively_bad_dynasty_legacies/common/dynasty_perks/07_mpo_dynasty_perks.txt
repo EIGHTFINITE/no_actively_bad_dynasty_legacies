@@ -3,7 +3,10 @@
 
 	can_be_picked = {
 		has_mpo_dlc_trigger = yes
-		government_has_flag = government_is_nomadic
+		OR = {
+			is_ai = no
+			government_has_flag = government_is_nomadic
+		}
 	}
 
 	character_modifier = {
@@ -31,11 +34,6 @@
 mpo_nomad_legacy_2 = { # Scorched Earth
 	legacy = mpo_nomad_legacy_track
 
-	can_be_picked = {
-		has_mpo_dlc_trigger = yes
-		government_has_flag = government_is_nomadic
-	}
-
 	character_modifier = {
 		movement_speed_land_raiding = 0.25
 	}
@@ -48,11 +46,6 @@ mpo_nomad_legacy_2 = { # Scorched Earth
 mpo_nomad_legacy_3 = { # The Secret History
 	legacy = mpo_nomad_legacy_track
 
-	can_be_picked = {
-		has_mpo_dlc_trigger = yes
-		government_has_flag = government_is_nomadic
-	}
-	
 	character_modifier = {
 		herd_conversion = 0.01
 		hostile_raid_time = 1
@@ -67,11 +60,6 @@ mpo_nomad_legacy_3 = { # The Secret History
 mpo_nomad_legacy_4 = { # The Punishment of God
 	legacy = mpo_nomad_legacy_track
 
-	can_be_picked = {
-		has_mpo_dlc_trigger = yes
-		government_has_flag = government_is_nomadic
-	}
-	
 	character_modifier = {
 		herd_conversion = 0.02
 		archer_cavalry_pursuit_mult = 0.2
@@ -88,11 +76,6 @@ mpo_nomad_legacy_4 = { # The Punishment of God
 mpo_nomad_legacy_5 = { # Pax Mongolica
 	legacy = mpo_nomad_legacy_track
 
-	can_be_picked = {
-		has_mpo_dlc_trigger = yes
-		government_has_flag = government_is_nomadic
-	}
-	
 	character_modifier = {
 		monthly_income_from_herd_mult = 0.1
 		tributary_opinion = 10
